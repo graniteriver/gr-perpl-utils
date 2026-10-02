@@ -1,0 +1,19 @@
+[package]
+name = "gr-perpl-utils"
+version = "0.1.0"
+edition = "2024"
+description = "Logic for working with Perpl DEX"
+license = "MIT"
+readme = "README.md"
+
+[dependencies]
+alloy = { version = "2.5", features = ["rpc-client-ws-ring"] }
+anyhow = "1.0.104"
+async-stream = "0.3.6"
+futures-util = "0.3.34"
+tokio = { version = "1.53.1", features = ["macros", "rt", "sync", "time"] }
+tracing = "0.1.44"
+
+[dev-dependencies]
+antidote = "1.1"
+async-trait = "0.1.92"
