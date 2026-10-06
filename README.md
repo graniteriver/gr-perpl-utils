@@ -1,4 +1,4 @@
-# gr-perpl-utils
+# gr-perpl-utils [![crates.io](https://img.shields.io/crates/v/gr-perpl-utils.svg)](https://crates.io/crates/gr-perpl-utils) [![Documentation](https://docs.rs/gr-perpl-utils/badge.svg)](https://docs.rs/gr-perpl-utils)
 Logic for working with Perpl DEX on the tokio runtime.
 
 Includes some helpers not currently provided by the [upstream SDK](https://github.com/PerplFoundation/dex-sdk):
