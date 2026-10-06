@@ -1,3 +1,4 @@
+//! Logic for working with Perpl DEX on the tokio runtime.
 pub mod block_logs;
 
 use alloy::primitives::{Address, address};

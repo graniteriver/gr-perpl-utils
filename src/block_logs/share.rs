@@ -10,7 +10,6 @@ use anyhow::anyhow;
 use futures_util::{Stream, StreamExt};
 use std::{pin::pin, sync::Arc};
 use tokio::sync::broadcast;
-use tracing::trace;
 
 pub type ArcLogsResult = Result<Arc<BlockLogs>, Arc<anyhow::Error>>;
 pub(crate) const PROCESS_LIVE_STREAM_CHANNEL_LEN: usize = 256;
@@ -66,10 +65,6 @@ pub fn single_process_live_stream(
 
         let first_n = first.number;
         if first_n > from_block_n {
-            trace!(
-                first_n,
-                from_block_n, "single_process_live_stream catching up on historic blocks"
-            );
             // stream older events first
             let mut history = pin!(batch_stream::<256>(
                 rest,
@@ -104,7 +99,6 @@ pub fn single_process_live_stream(
     }
 }
 
-#[derive(Debug)]
 struct SingleStreamHandle {
     tx: broadcast::WeakSender<ArcLogsResult>,
     node_url: String,
