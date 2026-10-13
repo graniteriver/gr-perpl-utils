@@ -11,7 +11,8 @@ Only Perpl mainnet exchange logs are currently supported.
 
 Tested with a small number of Monad RPC providers. When trying a new provider, check it supports:
 * `blockTimestamp` in `eth_getLogs` responses.
-* `newHeads` websocket subscriptions with populated `logsBloom` headers. Live streams skip
+* `monadNewHeads` websocket subscriptions with populated `logsBloom` headers. Live streams follow
+  `Voted` (or better) updates and skip
   `eth_getLogs` for blocks whose bloom excludes the exchange, so a zeroed bloom silently drops logs.
 
 ### Compressed fetching
