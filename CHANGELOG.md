@@ -1,4 +1,4 @@
-# Unreleased (v0.1.1)
+# v0.1.1
 * Fix safe block streaming using `monadNewHeads` instead of `newHeads`.
 
 # v0.1.0
